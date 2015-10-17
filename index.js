@@ -66,3 +66,9 @@ function v6(cb) {
 module.exports = v4;
 module.exports.v4 = v4;
 module.exports.v6 = v6;
+
+process.on('uncaughtException', function () {
+// requiring native-dns throws an exception
+// if /etc/resolv.conf cannot be found.
+// simply ignore this.
+});
